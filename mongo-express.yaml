@@ -26,12 +26,12 @@ spec:
               name: mongodb-secret
               key: mongo-root-username
         - name: ME_CONFIG_MONGODB_ADMINPASSWORD
-          valueFrom:
+          valueFrom: 
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-password
         - name: ME_CONFIG_MONGODB_SERVER
-          valueFrom:
+          valueFrom: 
             configMapKeyRef:
               name: mongodb-configmap
               key: database_url
@@ -43,9 +43,10 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  type: LoadBalancer
+  type: LoadBalancer  
   ports:
     - protocol: TCP
       port: 8081
       targetPort: 8081
       nodePort: 30000
+

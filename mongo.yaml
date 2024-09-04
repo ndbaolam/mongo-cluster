@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodp-deployment
+  name: mongodb-deployment
   labels:
     app: mongodb
 spec:
@@ -11,9 +11,9 @@ spec:
       app: mongodb
   template:
     metadata:
-      labels: 
+      labels:
         app: mongodb
-    spec: 
+    spec:
       containers:
       - name: mongodb
         image: mongo
@@ -21,7 +21,7 @@ spec:
         - containerPort: 27017
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom: 
+          valueFrom:
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-username
@@ -42,4 +42,5 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+
 
