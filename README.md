@@ -33,3 +33,9 @@ minikube service mongo-express-service
 ```
 Note that: Storing the data in Secret component doesn't automatically make it secure
 There are built-in mechanism for basic security, which are not enabled by default
+
+## References
+https://hub.docker.com/_/mongo-express
+https://hub.docker.com/_/mongo
+https://www.youtube.com/watch?v=X48VuDVv0do
+https://kubernetes.io/docs/concepts/
