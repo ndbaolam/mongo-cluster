@@ -31,9 +31,10 @@ kubectl apply -f mongo-express.yaml
 kubectl get svc # To check services running
 minikube service mongo-express-service
 ```
+If your browser required to login, ```sh kubectl logs <mongo-express-pod-id>``` to see the default username and password (basically "admin:pass")
 Note that: Storing the data in Secret component doesn't automatically make it secure
 There are built-in mechanism for basic security, which are not enabled by default
-
+It's important to use '-n' tag in 'echo' command otherwise it's not going to work!
 ## References
 https://hub.docker.com/_/mongo-express
 https://hub.docker.com/_/mongo
